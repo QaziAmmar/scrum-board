@@ -1,5 +1,6 @@
 {
   "name": "scrum_board",
+  "homepage": "http://sprint.ml-bench.com/",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
@@ -10,12 +11,14 @@
     "react-beautiful-dnd": "^13.0.0",
     "react-calendar": "^4.0.0",
     "react-icons": "^3.7.0",
+    "react-native-fs": "^2.0.1-rc.2",
     "react-router": "^6.8.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "^5.0.1",
     "sassy-datepicker": "^0.10.2",
     "styled-components": "^4.3.2",
-    "uid": "^2.0.1"
+    "uid": "^2.0.1",
+    "write-json-file": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",

@@ -4,6 +4,8 @@ import { uid } from 'uid';
 import Header from '../../components/Header'
 import Board from '../../components/Board'
 import { db } from '../../firebase'
+import data from "../../data.json"
+
 import { onValue, ref, remove, set, query, orderByKey } from 'firebase/database';
 
 
@@ -11,8 +13,19 @@ import { onValue, ref, remove, set, query, orderByKey } from 'firebase/database'
 
 function Dashboard() {
 
+
   const [tasks, setTasks] = useState([]);
   const [page, setPage] = useState(0);
+  
+
+  // Generate base table to firebase
+ const generateBaseTable = async () => {
+
+      set(ref(db, `/`), {
+        Tasks: data.Tasks
+      })
+
+  }
 
   // Add task 
   const handleAddTask = (id, e) => {
@@ -43,6 +56,8 @@ function Dashboard() {
         const data = snapshot.val();
         if (data !== null) {
           filterData(data)
+        } else {
+          generateBaseTable()
         }
 
       });
@@ -78,6 +93,12 @@ function Dashboard() {
     setPage(page + 1);
   }
 
+  // this function will run once to make base database structure
+  useEffect(() => {
+    // generateBaseTable()
+
+  }, []);
+
   useEffect(() => {
 
     fetchAllTask();
@@ -88,12 +109,12 @@ function Dashboard() {
   return (
     <>
       <GlobaStyle />
-    
-        <Header />
-        <>
-          {(tasks.length === 3) && <Board data={tasks} handleAddTask={handleAddTask} swipCardFirebase={swipCardFirebase} refreshTaskList={pageRefresh} />}
-        </>
-      
+
+      <Header />
+      <>
+        {(tasks.length === 3) && <Board data={tasks} handleAddTask={handleAddTask} swipCardFirebase={swipCardFirebase} refreshTaskList={pageRefresh} />}
+      </>
+
     </>
   );
 }

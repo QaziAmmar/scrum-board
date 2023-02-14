@@ -74,7 +74,7 @@ export const Content = styled.div`
 `;
 export const Duration = styled.div`
   width: 100%;
-  padding: 15px;
+  padding: 0px 15px 15px 15px;
   display: inline-flex;
   
   p{

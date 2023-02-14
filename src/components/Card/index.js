@@ -44,7 +44,7 @@ export default memo(function Card({ card, index, columnId, handleCardClick, refr
           </Header>
           <Content>
             <h2 className="title">{card.title}</h2>
-            <p className="detail" >{card.content}</p>
+            {/* <p className="detail" >{card.content}</p> */}
             <div className="flex-row">
               <img className="person-icon" src={person} alt="" />
               <p className="user">{mainUser}</p>

@@ -1,0 +1,23 @@
+{
+    "isDataSent" : false, 
+
+    "Tasks": {
+            "1" : {
+                "creatable": false,
+                "id" : "1",
+                "title": "TO DO"
+            }, 
+            "2" : {
+                "creatable": false,
+                "id" : "2",
+                "title": "IN Progress"
+            }, 
+            "3" : {
+                "creatable": false,
+                "id" : "3",
+                "title": "DONE"
+            }
+
+    }
+
+}
